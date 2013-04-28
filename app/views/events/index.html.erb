@@ -1,11 +1,5 @@
 <h1><%= pluralize(@events.size, 'Event') %></h1>
 
-<ul>
-  <% @events.each do |event| %>
-    <li><%= event.name %></li>
-  <% end %>
-</ul>
-
 <% @events.each do |event| %>
   <article>
     <header>
@@ -23,7 +17,10 @@
         <th>Where:</th>
         <td><%= event.location %></td>
       </tr>
-      tr>td
+      <tr>
+        <th>Price:</th>
+        <td><%= number_to_currency(event.price) %></td>
+      </tr>
     </table>
   </article>
 <% end %>
