@@ -2,6 +2,28 @@
 
 <ul>
   <% @events.each do |event| %>
-    <li><%= event %></li>
+    <li><%= event.name %></li>
   <% end %>
 </ul>
+
+<% @events.each do |event| %>
+  <article>
+    <header>
+      <h2><%= event.name %></h2>
+    </header>
+    <p>
+      <%= truncate(event.description, length: 35, seperator: ' ') %>
+    </p>
+    <table>
+      <tr>
+        <th>When:</th>
+        <td><%= event.starts_at %></td>
+      </tr>
+      <tr>
+        <th>Where:</th>
+        <td><%= event.location %></td>
+      </tr>
+      tr>td
+    </table>
+  </article>
+<% end %>
